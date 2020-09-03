@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="js/libraries/webcam.min.js"></script>
+    <title>PhotoDoc</title>
+</head>
+<body>
+
+    <div class="switch-language-legend right">
+        <p>PT EN</p>
+    </div>
+
+    <div class="switch-language-wrapper right ">
+        <label class="switch">
+            <input id="language-option" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div class="switch-theme-legend right">
+        <img src="images/sun.svg" alt="light"/>
+        <img src="images/moon.svg" alt="dark"/>
+    </div>
+
+    <div class="switch-theme-wrapper right">
+        <label class="switch">
+            <input id="theme-option" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div class="logo-wrapper center">
+        <img src="images/logo.png" alt="PhotoDoc Logo">
+    </div>
+
+    <div class="tutorial-wrapper">
+        <div class="tutorial"></div>
+    </div>
+
+    <div class="upload-desktop-legend center">
+        <p>Clique no botão de camera<br>para selecionar o arquivo</p>
+    </div>
+
+    <div class="upload-desktop-controls center">
+        <table>
+            <tr>
+                <td><input class="camera-buttons" name="picDesk" type="file"></td>
+                <td><td><input disabled class="camera-buttons input-off btn-submit-pic" name="submit" type="submit" value=""></td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="image-preview center"></div>
+
+    <div class="camera-preview-wrapper center">
+
+        <div class="camera-preview center"></div>
+    </div>
+
+    <div class="camera-control-wrapper center">
+        <table>
+            <tr>
+                <td><input class="camera-buttons" name="clear" type="button"></td>
+                <td><input class="camera-buttons" name="pic" type="button"></td>
+                <td><input class="camera-buttons input-off" name="submit" type="submit" value=""></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <script src="js/changeLanguage.js"></script>
+    <script src="js/changeTheme.js"></script>
+    <script src="js/animationScript.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/verifyUpload.js"></script>
+    <script src="js/apiFetcher.js"></script>
+
+    <div class="scripts">
+        <script id="language-script" src="js/ptTutorial.js"></script>
+    </div>
+
+</body>
+</html>

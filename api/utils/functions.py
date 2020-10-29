@@ -7,5 +7,3 @@ def decode_base64_img(img, url):
 
     image.save(url)
 
-    
-

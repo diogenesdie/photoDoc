@@ -2,12 +2,12 @@ from flask_cors import CORS
 from flask.json import jsonify, loads
 from flask import Flask, request
 from utils.functions import decode_base64_img
+from utils.test_image import test_image
 from datetime import datetime
-
+import json
 
 app  = Flask(__name__)
 cors = CORS(app)
-
 
 @app.route('/process', methods=['POST'])
 def test():
@@ -19,7 +19,9 @@ def test():
 
     decode_base64_img(data, FILEPATH)
 
-    return jsonify({'status': 'ok!'})
+    result = test_image(FILEPATH)
+
+    return jsonify(result)
 
 
 if __name__ == "__main__":

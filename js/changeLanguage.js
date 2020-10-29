@@ -10,8 +10,10 @@ languageCheckBox.addEventListener('click',()=>{
     script.id = "language-script";
 
     const legend = document.createElement("p");
+    const error = document.createElement("p");
     const br = document.createElement("br");
     const legends = ["Clique no botão de camera ", "para selecionar o arquivo", "Click the camera button", "to select the file"];
+    const errors = ["Formato inválido", "as imagens devem ser JPEG ou JPG", "Invalid format", "images must be JPEG or JPG"]
 
     const uploadLegend = document.querySelector(".upload-desktop-legend");
 
@@ -20,11 +22,20 @@ languageCheckBox.addEventListener('click',()=>{
         legend.append(legends[2]);
         legend.append(br);
         legend.append(legends[3]);
+
+        error.append(errors[2]);
+        error.append(br.cloneNode());
+        error.append(errors[3]);
     }else {
         script.src = "js/ptTutorial.js";
         legend.append(legends[0]);
         legend.append(br);
         legend.append(legends[1]);
+
+        error.append(errors[0]);
+        error.append(br.cloneNode());
+        error.append(errors[1]);
+
     }
 
     document.querySelector(".tutorial").innerHTML = "";
@@ -33,6 +44,8 @@ languageCheckBox.addEventListener('click',()=>{
 
     document.querySelector(".upload-desktop-legend").innerHTML = "";
     document.querySelector(".upload-desktop-legend").appendChild(legend);
+    document.querySelector(".error").innerHTML = "";
+    document.querySelector(".error").appendChild(error);
 
 } );
 

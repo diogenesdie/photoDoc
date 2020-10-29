@@ -1,3 +1,16 @@
+const load = document.querySelector(".load");
+
+const showResult = (result) =>{
+    if(Number(result[0]['skin cancer'])>=0.7){
+        load.innerHTML = "Probabilidade de ser câncer de pele: "+Math.round(Number(result[0]['skin cancer'])*100)+"%";
+        return;
+    }
+
+    load.innerHTML = "Ta safe mano B)";
+        
+    
+};
+
 const getImage = () => {
     const element = document.querySelector('.pic-preview').src;
     return { img: element };
@@ -15,12 +28,20 @@ const fetchApiDesktop = async () => {
             "Content-Type": "application/json"
         }
     };
+    
+    load.innerHTML = '<img src="./images/load.gif" alt="Loading..."></img>';
+    load.classList.remove("off");
+    load.classList.add("on");
+
+    window.scroll(0, 1000);
 
     const apiResponse = await fetch(API_URL, options);
-    console.log(await apiResponse.text());
+    const parsedApiResponse = await apiResponse.json();
+    
+    showResult(parsedApiResponse);
 };
 
-
-
-document.querySelector('.btn-submit-pic').addEventListener('click', fetchApiDesktop);
-//document.querySelector('input[type="submit"]').addEventListener('click', );
+//Desktop Button
+document.querySelectorAll('.btn-submit-pic')[0].addEventListener('click', fetchApiDesktop);
+//Mobile Button
+document.querySelectorAll('.btn-submit-pic')[1].addEventListener('click', fetchApiDesktop);

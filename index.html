@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
     <script src="js/libraries/webcam.min.js"></script>
     <title>PhotoDoc</title>
 </head>
@@ -33,7 +34,7 @@
     </div>
 
     <div class="logo-wrapper center">
-        <img src="images/logo.png" alt="PhotoDoc Logo">
+        <img src="images/logo.svg" alt="PhotoDoc Logo">
     </div>
 
     <div class="tutorial-wrapper">
@@ -44,19 +45,26 @@
         <p>Clique no botão de camera<br>para selecionar o arquivo</p>
     </div>
 
-    <div class="upload-desktop-controls center">
-        <table>
-            <tr>
-                <td><input class="camera-buttons" name="picDesk" type="file"></td>
-                <td><td><input disabled class="camera-buttons input-off btn-submit-pic" name="submit" type="submit" value=""></td></td>
-            </tr>
-        </table>
+    <div class="error center off">
+        <p>Formato inválido<br>as imagens devem ser JPEG ou JPG</p>
     </div>
 
     <div class="image-preview center"></div>
 
-    <div class="camera-preview-wrapper center">
+    <div class="upload-desktop-controls center">
+        <table>
+            <tr>
+                <td><input class="camera-buttons" name="picDesk" type="file"></td>
+                <td><input disabled class="camera-buttons input-off btn-submit-pic" name="submit" type="submit" value=""></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="#load" class="load center off">
+        <img src="./images/load.gif" alt="Loading...">
+    </div>
 
+    <div class="camera-preview-wrapper center">
         <div class="camera-preview center"></div>
     </div>
 
@@ -65,7 +73,7 @@
             <tr>
                 <td><input class="camera-buttons" name="clear" type="button"></td>
                 <td><input class="camera-buttons" name="pic" type="button"></td>
-                <td><input class="camera-buttons input-off" name="submit" type="submit" value=""></td>
+                <td><input id="" class="camera-buttons input-off btn-submit-pic" name="submit" type="submit" value=""></td>
             </tr>
         </table>
     </div>

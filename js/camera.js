@@ -52,28 +52,6 @@ function snap() {
     changeSubmit(true);
 }
 
-function upload() {
-    console.log("Uploading...")
-    let image = document.getElementById('image').src;
-    let form = document.getElementById('myForm');
-    let formData = new FormData(form);
-    formData.append("file", image);
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "/signup");
-
-    // check when state changes,
-    xmlhttp.onreadystatechange = function() {
-
-        if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            alert(xmlhttp.responseText);
-        }
-    }
-
-    xmlhttp.send(formData);
-    console.log(formData.get('file'));
-    console.log(formData.get('userID'));
-}
-
 const cancel = document.getElementsByName("clear");
 const pic = document.getElementsByName("pic");
 
